@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic|Oswald' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+     <style>
+     	body, html {
+    /*background: url(bg.jpg);*/
+    background-size: 110px 69px;
+    font-family: 'Playfair Display', serif;
+    
+}
+
+body p {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.header h1 {
+    background: #ce2c38;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    height: 140px;
+    margin: 60px auto 0;
+    position: relative;
+    text-align: center;
+    width: 140px;
+    z-index: 10;
+    
+}
+
+.header h1 span {
+    color:#fff;
+    display: block;
+    font-size: 40px;
+    padding: 34px 0 0 0;
+}
+
+.header h1 span+span {
+    color:#000;
+    display: block;
+    font-size: 28px;
+    padding: 0;
+}
+
+.main .container {
+    background:#fff;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin: -70px auto 80px;
+    padding: 80px;
+    z-index: 0;
+}
+
+h1 {
+    color: #444;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    border-bottom: 1px solid #444;
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    margin: 20px 0 10px;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #ce2c38;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.price p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    margin: 26px 0 5px;
+    text-align: right;
+}
+.button btn{
+	position: relative;
+	left: -1000px;
+}
+.container img{
+	width: 100%;
+}
+
+order-app{
+	position: relative;
+	left: 170px;
+}
+
+ p img{
+  position: relative;
+  left: -50px;
+  width: 40px;
+  cursor: pointer;
+}
+.number{
+  position: relative;
+  left: 50px;
+  top: -42px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.order-app{
+  position: relative;
+  left: 60px;
+}
+
+input[type="text"]{
+  width: 200px;
+  height: 50px;
+}
+
+input[type="submit"]{
+  width: 200px;
+  height: 50px;
+}
+
+.mid h2{
+  text-align: left;
+}
+.footer{
+  font-size: 16px;
+  background: lightgray;
+  height: 80px;
+}
+
+table{
+  border: 1px solid black;
+  padding: 20px;
+}
+
+table  th, td  {
+   border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+  </head>
+  <body ng-app="orderFoodApp">
+  	<div class="container">
+  		<img src="1.jpg" alt="Hunan Restaurant" />
+  	</div>
+
+    <div ng-controller="MainController"class="main">
+      <div class="container-fluid text-center bg-grey">
+        <h1>Specials for {{ today | date }}</h1>
+   
+          <h2>Main order</h2>
+       
+        <!-- <div ng-repeat="m in mains" class="row text-center"> -->
+        <div class="row text-center">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{duck.icon}}">
+              <h3 class="name">{{ duck.name }} </h3>
+              <p class="description">{{ duck.description }} </p>
+              <p class="price">{{ duck.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{bun.icon}}">
+              <h3 class="name">{{ bun.name }} </h3>
+              <p class="description">{{ bun.description }} </p>
+              <p class="price">{{ bun.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{noodle.icon}}">
+              <h3 class="name">{{ noodle.name }} </h3>
+              <p class="description">{{ noodle.description }} </p>
+              <p class="price">{{ noodle.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+            <div class="row text-center">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{pork.icon}}">
+              <h3 class="name">{{ pork.name }} </h3>
+              <p class="description">{{ pork.description }} </p>
+              <p class="price">{{ pork.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{chicken.icon}}">
+              <h3 class="name">{{ chicken.name }} </h3>
+              <p class="description">{{ chicken.description }} </p>
+              <p class="price">{{ chicken.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img ng-src="{{beef.icon}}">
+              <h3 class="name">{{ beef.name }} </h3>
+              <p class="description">{{ beef.description }} </p>
+              <p class="price">{{ beef.price | currency }} </p>
+              <p><img src="like.jpg" alt="like" ng-click="count = count + 1">{{ count }}</p>
+              <order-app></order-app>
+            </div>
+          </div>
+          
+
+    <div class="container">
+      <form role="form" ng-controller="CreateController as createCtrl"
+            ng-submit="createCtrl.create()">
+              <br><br>
+            <div class="form-group">
+              <div class="mid">
+              <h2 >Pleae order here</h2>
+            </div>
+            <input type="text" class="form-control" ng-model="createCtrl.fname" placeholder="Input your first name"/>
+            <input type="text" class="form-control" ng-model="createCtrl.lname" placeholder="Input your last name"/><br />
+            <input type="text" class="form-control" ng-model="createCtrl.phone" placeholder="Input your phone"/><br />
+
+            <div data-ng-init="quantity=1; price=10">
+              <h2 class="font">Cost calculator</h2><br />
+              Quantity: <input type="number" ng-model="createCtrl.quantity">
+              Price: <input type="number" ng-model="createCtrl.price">
+
+              <p><b>Total in dollar: </b> {{ createCtrl.quantity * createCtrl.price}}</p>
+            </div>
+
+            <input type="submit" value="Order" /><br><br><br>
+
+            <table ng-repeat="order in createCtrl.food" style="width:100%">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+                <th>Order date/time</th>
+              </tr>
+              <tr>
+                <td>{{ order.fname }}</td>
+                <td>{{ order.lname}}</td>
+                <td>{{ order.phone }}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{ order.price }}</td>
+                <td>{{createCtrl.quantity * createCtrl.price}}</td>
+                <td>{{order.created}}</td>
+              </tr>
+            </table>
+
+          </div>
+      </form> 
+
+    </div> 
+
+    <!-- <div class="footer">
+      @Copyright by Jonathan Li
+    </div> -->
+    <div class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span>(213)189-2780</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myfood@gmail.com</p> 
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+<!-- Set height and width with CSS -->
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+
+function initialize() {
+var mapProp = {
+center:myCenter,
+zoom:12,
+scrollwheel:false,
+draggable:false,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+position:myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+    <script src="js/app.js"></script>
+    <script src="js/directives/orderApp.js"></script>
+
+  </body>
+</html>
