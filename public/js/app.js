@@ -7,7 +7,7 @@ app.controller('MainController', ['$scope', function($scope) {
       icon: 'duck.jpg',
       name: 'Peking Duck',
       description: 'a famous duck dish from Beijing that has been prepared since the imperial era. ',
-      price: 29.99,
+      price: 8.99,
       image: 'like.jpg'
     };
 
@@ -15,7 +15,7 @@ app.controller('MainController', ['$scope', function($scope) {
       icon: '3.jpg',
       name: 'Apple Pie',
       description: 'a fruit pie in which the principal filling ingredient is apple. It is, on occasion, served with whipped cream ',
-      price: 7.99,
+      price: 8.99,
       image: 'like.jpg'
     };
 
@@ -23,7 +23,7 @@ app.controller('MainController', ['$scope', function($scope) {
       icon: '2.jpg',
       name: 'Shanghai Noddle',
       description: 'a dish made from Shanghai .',
-      price: 12.99,
+      price: 8.99,
       image: 'like.jpg'
     };
 
@@ -31,7 +31,7 @@ app.controller('MainController', ['$scope', function($scope) {
         icon: '4.jpg',
         name: 'kung pao pork',
         description: 'Spicy pork with peanuts, substitute cashews for peants',
-        price: 8.00,
+        price: 8.99,
         image: 'like.jpg'
     };
 
@@ -39,7 +39,7 @@ app.controller('MainController', ['$scope', function($scope) {
       icon: '5.jpg',
       name: 'drunk chicken',
       description: 'Wine and green onion mix to make you feel high, and soft in head',
-      price: 8.00,
+      price: 8.99,
       image: 'like.jpg'
     };
 
@@ -47,7 +47,7 @@ app.controller('MainController', ['$scope', function($scope) {
       icon: '6.jpg',
       name: 'beef with soup noodle',
       description: 'Hot spicy with soft noodle, mix beef, and secret ingredients',
-      price: 8.00,
+      price: 8.99,
       image: 'like.jpg'
     };
 
